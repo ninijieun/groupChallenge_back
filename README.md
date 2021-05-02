@@ -27,4 +27,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-### Sample
+#### 3. Sample
+```bash
+localhost:3000
+```
