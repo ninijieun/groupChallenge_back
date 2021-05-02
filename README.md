@@ -8,7 +8,8 @@
 #### 1. nestJS
 [nestJS 설치] (https://docs.nestjs.com/first-steps)
  > node.js 설치 후 path 설정
- > 
+ > [node.js 설치] (https://nodejs.org/ko/)  
+ 
 ##### Installation
 ```bash
 $ npm install
