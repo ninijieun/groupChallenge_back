@@ -29,6 +29,7 @@ $ npm run start:prod
 ```
 
 #### 3. Sample
+ - Swagger UI 사용 api  
 ```bash
-localhost:3000
+[Swagger UI] (http://localhost:3000/api)
 ```
