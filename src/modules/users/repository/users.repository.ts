@@ -13,8 +13,8 @@ export class UserRepository extends Repository<User> {
         return await this.find({
           where: {
             $or:[ // or
-              { user_id : {$regex: new RegExp(findtext)}, }, // like 검색
-              { user_name : {$regex: new RegExp(findtext)},}
+              { userId : {$regex: new RegExp(findtext)}, }, // like 검색
+              { userName : {$regex: new RegExp(findtext)},}
             ]
           }
         });
@@ -39,8 +39,8 @@ export class UserRepository extends Repository<User> {
     public async createUser(
         createUserDto: CreateUserDto,
     ): Promise<User> {
-        
-      const user = await this.create(createUserDto);
+      
+      const user:User = await this.create(createUserDto);
       await user.hashPassword();
 
       await this.save(user);
@@ -61,7 +61,7 @@ export class UserRepository extends Repository<User> {
         });
       }
       
-      user = ObjectMapper.mappedValues(updateUserDto, user, {skip: ['friends']});
+      user = ObjectMapper.mappedValues(updateUserDto, user);
       if(updateUserDto.password){
         await user.hashPassword();
       }

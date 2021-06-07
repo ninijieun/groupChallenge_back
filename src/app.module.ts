@@ -20,14 +20,14 @@ import { LoggingInterceptor } from './util/interceptor/logging-interceptor';
       provide : APP_INTERCEPTOR,
       useClass: LoggingInterceptor, // TODO : muiltiple 연결 확인 필요
     },
-    // {
-    //   provide : APP_GUARD,
-    //   useClass: JwtAuthGuard,
-    // },
+    {
+      provide : APP_GUARD,
+      useClass: JwtAuthGuard,
+    },
   ],
   imports: [
     TypeOrmModule.forRoot(),
-    // MongooseModule.forRoot('mongodb://localhost/testdb'), 
+    // MongooseModule.forRoot('mongodb://localhost/testdb'), - typeorm 사용으로 사용 안함.
     UsersModule,
     AuthModule,
     AutomapperModule.withMapper()

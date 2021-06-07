@@ -15,27 +15,6 @@ export class UsersController {
     ) { }
 
     /**
-     * 회원가입 createUsers()
-     * @param CreateUserDto
-     * @returns CreateUserDto
-     */
-    @Post() // post는 return 201
-    async createUsers(@Body() createUserDto: CreateUserDto) {
-        try {
-            await this.usersService.create(createUserDto)
-
-            return createUserDto;
-        } catch (error) {
-
-            Logger.error(`error >>> ${error}`);
-            Logger.error(`error >>> ${JSON.stringify(error)}`);
-
-            throw error;
-        }
-    }
-
-
-    /**
      * 전체조회 findAllUsers()
      * @param 
      * @returns CreateUserDto[]

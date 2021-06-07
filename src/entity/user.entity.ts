@@ -6,11 +6,11 @@ import { BasicEntity } from './basic.entity';
 @Entity({ name: 'users' })
 export class User extends BasicEntity {
   
-  @PrimaryColumn({name:"user_id"})
+  // @PrimaryColumn({name:'user_id'}) - 지원 불가인듯 하다.
+  @PrimaryColumn()
   userId: string;
 
-  // TODO entity column name check
-  @Column({name:"user_name"})
+  @Column()
   userName: string;
 
   @Column({nullable: false})
@@ -41,7 +41,7 @@ export class User extends BasicEntity {
   @Column()
   email: string;
 
-  @Column({name:"say_word"})
+  @Column()
   sayWord: string;
 
 }
