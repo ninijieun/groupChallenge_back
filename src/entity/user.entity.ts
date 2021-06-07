@@ -1,6 +1,6 @@
 import { InternalServerErrorException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { Column, Entity, OneToMany, OneToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { BasicEntity } from './basic.entity';
 
 @Entity({ name: 'users' })
