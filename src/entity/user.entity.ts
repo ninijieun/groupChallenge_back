@@ -2,6 +2,7 @@ import { InternalServerErrorException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { BasicEntity } from './basic.entity';
+import { Group } from './group.entity';
 
 @Entity({ name: 'users' })
 export class User extends BasicEntity {
@@ -43,5 +44,15 @@ export class User extends BasicEntity {
 
   @Column()
   sayWord: string;
+
+  @Column()
+  fcmToken: string;
+
+  @Column(type => Group)
+  favoritGroup: Group;
+
+  // TODO
+  // @Column(type => Files)
+  // profilePhoto: Files;
 
 }
