@@ -48,12 +48,12 @@ export class Group extends BasicEntity {
   // backgroundPhoto: Files;
 
   /** 초대코드 */
-  @Column({unique: true})
-	invitedCode: string;
+  // @Column({unique: true})
+	// invitedCode: string;
 
-  /** 초대코드 생성 */
-  async getInvitedCode(): Promise<void> {      
-      this.invitedCode = await Math.random().toString(36).substr(2,11);
-  }
+  // /** 초대코드 생성 */
+  // async getInvitedCode(): Promise<void> {      
+  //     this.invitedCode = Math.random().toString(36).substr(2, 11);
+  // }
 
 }
